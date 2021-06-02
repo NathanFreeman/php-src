@@ -1222,9 +1222,9 @@ static zend_always_inline zend_bool zend_array_is_list(zend_array *array)
 	zend_long expected_idx = 0;
 	zend_long num_idx;
 	zend_string* str_idx;
-	/* Empty arrays are not lists, because empty array without any key. */
+	/* Empty arrays are lists */
 	if (zend_hash_num_elements(array) == 0) {
-		return 0;
+		return 1;
 	}
 
 	/* Packed arrays are lists */

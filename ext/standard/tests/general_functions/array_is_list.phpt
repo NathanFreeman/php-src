@@ -69,7 +69,7 @@ $arr[4] = 5;
 test_is_list("append with gap", $arr);
 
 --EXPECT--
-empty: false
+empty: true
 one: true
 two: true
 three: true
@@ -92,7 +92,7 @@ unset middle: false
 unset end: true
 unset string key: true
 unset into order: true
-unset to empty: false
+unset to empty: true
 append implicit: true
 append explicit: true
 append with gap: false
