@@ -1678,6 +1678,7 @@ escape:
                                 'E_USER_NOTICE',
                                 'E_STRICT', // TODO Cleanup when removed from Zend Engine.
                                 'E_RECOVERABLE_ERROR',
+                                'E_DEPRECATED',
                                 'E_USER_DEPRECATED'
                             ];
                             $error_consts = array_combine(array_map('constant', $error_consts), $error_consts);
@@ -1850,6 +1851,7 @@ function run_test(string $php, $file, array $env): string
 
     $temp_filenames = null;
     $org_file = $file;
+    $orig_php = $php;
 
     if (isset($env['TEST_PHP_CGI_EXECUTABLE'])) {
         $php_cgi = $env['TEST_PHP_CGI_EXECUTABLE'];
@@ -2063,7 +2065,7 @@ TEST $file
         settings2array($ini_overwrites, $ext_params);
         $ext_params = settings2params($ext_params);
         $extensions = preg_split("/[\n\r]+/", trim($test->getSection('EXTENSIONS')));
-        [$ext_dir, $loaded] = $skipCache->getExtensions("$php $pass_options $extra_options $ext_params $no_file_cache");
+        [$ext_dir, $loaded] = $skipCache->getExtensions("$orig_php $pass_options $extra_options $ext_params $no_file_cache");
         $ext_prefix = IS_WINDOWS ? "php_" : "";
         $missing = [];
         foreach ($extensions as $req_ext) {
@@ -2756,7 +2758,7 @@ $output
         if (strpos($log_format, 'S') !== false) {
             $env_lines = [];
             foreach ($env as $env_var => $env_val) {
-                $env_lines[] = "export $env_var=" . escapeshellarg($env_val);
+                $env_lines[] = "export $env_var=" . escapeshellarg($env_val ?? "");
             }
             $exported_environment = $env_lines ? "\n" . implode("\n", $env_lines) . "\n" : "";
             $sh_script = <<<SH

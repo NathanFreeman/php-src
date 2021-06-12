@@ -201,6 +201,10 @@ PHP 8.1 UPGRADE NOTES
     when dynamic pm is selected. The default value is 32 which was the previous
     hard coded value.
 
+- GD:
+  . Avif support is now available through the imagecreatefromavif() and
+    imageavif() functions, if libgd has been built with avif support.
+
 - hash:
   . The following functions have changed signatures:
 
@@ -389,6 +393,10 @@ PHP 8.1 UPGRADE NOTES
 7. New Classes and Interfaces
 ========================================
 
+- Intl:
+  . Added IntlDatePatternGenerator to dynamically generate patterns to use with IntlDateFormatter.
+    RFC: https://wiki.php.net/rfc/intldatetimepatterngenerator
+
 ========================================
 8. Removed Extensions and SAPIs
 ========================================
@@ -421,6 +429,9 @@ PHP 8.1 UPGRADE NOTES
     MYSQLI_REFRESH_SLAVE, in line with an upstream change in MySQL. The old
     constant is still available for backwards-compatibility reasons, but may
     be deprecated/removed in the future.
+    
+- Sockets:
+  . TCP_DEFER_ACCEPT socket option added where available.
 
 ========================================
 11. Changes to INI File Handling

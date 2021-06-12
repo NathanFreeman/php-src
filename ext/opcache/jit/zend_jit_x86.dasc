@@ -2749,43 +2749,43 @@ static int zend_jit_assign_cv_stub(dasm_State **Dst)
 }
 
 static const zend_jit_stub zend_jit_stubs[] = {
-	JIT_STUB(interrupt_handler, SP_ADJ_JIT, SP_ADJ_VM),
-	JIT_STUB(exception_handler, SP_ADJ_JIT, SP_ADJ_VM),
-	JIT_STUB(exception_handler_undef, SP_ADJ_JIT, SP_ADJ_VM),
-	JIT_STUB(leave_function, SP_ADJ_JIT, SP_ADJ_VM),
-	JIT_STUB(leave_throw, SP_ADJ_JIT, SP_ADJ_VM),
-	JIT_STUB(icall_throw, SP_ADJ_JIT, SP_ADJ_VM),
-	JIT_STUB(throw_cannot_pass_by_ref, SP_ADJ_JIT, SP_ADJ_VM),
-	JIT_STUB(undefined_offset, SP_ADJ_JIT, SP_ADJ_VM),
-	JIT_STUB(undefined_index, SP_ADJ_JIT, SP_ADJ_VM),
-	JIT_STUB(cannot_add_element, SP_ADJ_JIT, SP_ADJ_VM),
-	JIT_STUB(undefined_offset_ex, SP_ADJ_JIT, SP_ADJ_VM),
-	JIT_STUB(undefined_index_ex, SP_ADJ_JIT, SP_ADJ_VM),
-	JIT_STUB(cannot_add_element_ex, SP_ADJ_JIT, SP_ADJ_VM),
-	JIT_STUB(undefined_function, SP_ADJ_JIT, SP_ADJ_VM),
-	JIT_STUB(negative_shift, SP_ADJ_JIT, SP_ADJ_VM),
-	JIT_STUB(mod_by_zero, SP_ADJ_JIT, SP_ADJ_VM),
-	JIT_STUB(invalid_this, SP_ADJ_JIT, SP_ADJ_VM),
-	JIT_STUB(trace_halt, SP_ADJ_JIT, SP_ADJ_VM),
-	JIT_STUB(trace_exit, SP_ADJ_JIT, SP_ADJ_VM),
-	JIT_STUB(trace_escape, SP_ADJ_JIT, SP_ADJ_VM),
-	JIT_STUB(hybrid_runtime_jit, SP_ADJ_VM, SP_ADJ_NONE),
-	JIT_STUB(hybrid_profile_jit, SP_ADJ_VM, SP_ADJ_NONE),
-	JIT_STUB(hybrid_hot_code, SP_ADJ_VM, SP_ADJ_NONE),
-	JIT_STUB(hybrid_func_hot_counter, SP_ADJ_VM, SP_ADJ_NONE),
-	JIT_STUB(hybrid_loop_hot_counter, SP_ADJ_VM, SP_ADJ_NONE),
-	JIT_STUB(hybrid_hot_trace, SP_ADJ_VM, SP_ADJ_NONE),
-	JIT_STUB(hybrid_func_trace_counter, SP_ADJ_VM, SP_ADJ_NONE),
-	JIT_STUB(hybrid_ret_trace_counter, SP_ADJ_VM, SP_ADJ_NONE),
-	JIT_STUB(hybrid_loop_trace_counter, SP_ADJ_VM, SP_ADJ_NONE),
-	JIT_STUB(assign_const, SP_ADJ_RET, SP_ADJ_ASSIGN),
-	JIT_STUB(assign_tmp, SP_ADJ_RET, SP_ADJ_ASSIGN),
-	JIT_STUB(assign_var, SP_ADJ_RET, SP_ADJ_ASSIGN),
-	JIT_STUB(assign_cv_noref, SP_ADJ_RET, SP_ADJ_ASSIGN),
-	JIT_STUB(assign_cv, SP_ADJ_RET, SP_ADJ_ASSIGN),
-	JIT_STUB(double_one, SP_ADJ_NONE, SP_ADJ_NONE),
+	JIT_STUB(interrupt_handler,         SP_ADJ_JIT,  SP_ADJ_VM),
+	JIT_STUB(exception_handler,         SP_ADJ_JIT,  SP_ADJ_VM),
+	JIT_STUB(exception_handler_undef,   SP_ADJ_JIT,  SP_ADJ_VM),
+	JIT_STUB(leave_function,            SP_ADJ_JIT,  SP_ADJ_VM),
+	JIT_STUB(leave_throw,               SP_ADJ_JIT,  SP_ADJ_VM),
+	JIT_STUB(icall_throw,               SP_ADJ_JIT,  SP_ADJ_VM),
+	JIT_STUB(throw_cannot_pass_by_ref,  SP_ADJ_JIT,  SP_ADJ_VM),
+	JIT_STUB(undefined_offset,          SP_ADJ_JIT,  SP_ADJ_VM),
+	JIT_STUB(undefined_index,           SP_ADJ_JIT,  SP_ADJ_VM),
+	JIT_STUB(cannot_add_element,        SP_ADJ_JIT,  SP_ADJ_VM),
+	JIT_STUB(undefined_offset_ex,       SP_ADJ_JIT,  SP_ADJ_VM),
+	JIT_STUB(undefined_index_ex,        SP_ADJ_JIT,  SP_ADJ_VM),
+	JIT_STUB(cannot_add_element_ex,     SP_ADJ_JIT,  SP_ADJ_VM),
+	JIT_STUB(undefined_function,        SP_ADJ_JIT,  SP_ADJ_VM),
+	JIT_STUB(negative_shift,            SP_ADJ_JIT,  SP_ADJ_VM),
+	JIT_STUB(mod_by_zero,               SP_ADJ_JIT,  SP_ADJ_VM),
+	JIT_STUB(invalid_this,              SP_ADJ_JIT,  SP_ADJ_VM),
+	JIT_STUB(trace_halt,                SP_ADJ_JIT,  SP_ADJ_VM),
+	JIT_STUB(trace_exit,                SP_ADJ_JIT,  SP_ADJ_VM),
+	JIT_STUB(trace_escape,              SP_ADJ_JIT,  SP_ADJ_VM),
+	JIT_STUB(hybrid_runtime_jit,        SP_ADJ_VM,   SP_ADJ_NONE),
+	JIT_STUB(hybrid_profile_jit,        SP_ADJ_VM,   SP_ADJ_NONE),
+	JIT_STUB(hybrid_hot_code,           SP_ADJ_VM,   SP_ADJ_NONE),
+	JIT_STUB(hybrid_func_hot_counter,   SP_ADJ_VM,   SP_ADJ_NONE),
+	JIT_STUB(hybrid_loop_hot_counter,   SP_ADJ_VM,   SP_ADJ_NONE),
+	JIT_STUB(hybrid_hot_trace,          SP_ADJ_VM,   SP_ADJ_NONE),
+	JIT_STUB(hybrid_func_trace_counter, SP_ADJ_VM,   SP_ADJ_NONE),
+	JIT_STUB(hybrid_ret_trace_counter,  SP_ADJ_VM,   SP_ADJ_NONE),
+	JIT_STUB(hybrid_loop_trace_counter, SP_ADJ_VM,   SP_ADJ_NONE),
+	JIT_STUB(assign_const,              SP_ADJ_RET,  SP_ADJ_ASSIGN),
+	JIT_STUB(assign_tmp,                SP_ADJ_RET,  SP_ADJ_ASSIGN),
+	JIT_STUB(assign_var,                SP_ADJ_RET,  SP_ADJ_ASSIGN),
+	JIT_STUB(assign_cv_noref,           SP_ADJ_RET,  SP_ADJ_ASSIGN),
+	JIT_STUB(assign_cv,                 SP_ADJ_RET,  SP_ADJ_ASSIGN),
+	JIT_STUB(double_one,                SP_ADJ_NONE, SP_ADJ_NONE),
 #ifdef CONTEXT_THREADED_JIT
-	JIT_STUB(context_threaded_call, SP_ADJ_RET, SP_ADJ_NONE),
+	JIT_STUB(context_threaded_call,     SP_ADJ_RET,  SP_ADJ_NONE),
 #endif
 };
 
@@ -6134,7 +6134,7 @@ static int zend_jit_assign_to_variable(dasm_State    **Dst,
 				|	IF_NOT_ZVAL_REFCOUNTED var_use_addr, >5
 			}
 			if (var_info & (MAY_BE_ARRAY|MAY_BE_OBJECT)) {
-				if (Z_REG(var_use_addr) == ZREG_FP) {
+				if (Z_REG(var_use_addr) != ZREG_FP) {
 					|	mov T1, Ra(Z_REG(var_use_addr)) // save
 				}
 				|	GET_ZVAL_PTR FCARG1a, var_use_addr
@@ -15276,6 +15276,7 @@ static zend_regset zend_jit_get_scratch_regset(const zend_op *opline, const zend
 			op2_info = OP2_INFO();
 			if (!(op1_info & ((MAY_BE_ANY|MAY_BE_REF|MAY_BE_UNDEF)-MAY_BE_LONG)) &&
 			    !(op2_info & ((MAY_BE_ANY|MAY_BE_REF|MAY_BE_UNDEF)-MAY_BE_LONG))) {
+bw_op:
 				regset = ZEND_REGSET_EMPTY;
 				if (ssa_op->result_def != current_var &&
 				    (ssa_op->op1_use != current_var || !last_use)) {
@@ -15291,25 +15292,15 @@ static zend_regset zend_jit_get_scratch_regset(const zend_op *opline, const zend
 			op2_info = OP2_INFO();
 			if (!(op1_info & ((MAY_BE_ANY|MAY_BE_REF|MAY_BE_UNDEF)-MAY_BE_LONG)) &&
 			    !(op2_info & ((MAY_BE_ANY|MAY_BE_REF|MAY_BE_UNDEF)-MAY_BE_LONG))) {
-				regset = ZEND_REGSET_EMPTY;
 				if (opline->op2_type == IS_CONST &&
 				    Z_TYPE_P(RT_CONSTANT(opline, opline->op2)) == IS_LONG &&
 				    zend_long_is_power_of_two(Z_LVAL_P(RT_CONSTANT(opline, opline->op2))) &&
 				    OP1_HAS_RANGE() &&
 				    OP1_MIN_RANGE() >= 0) {
-					if (ssa_op->result_def != current_var &&
-					    (ssa_op->op1_use != current_var || !last_use)) {
-						ZEND_REGSET_INCL(regset, ZREG_R0);
-					}
-					if (sizeof(void*) == 8
-					 && !IS_SIGNED_32BIT(Z_LVAL_P(RT_CONSTANT(opline, opline->op2)) - 1)) {
-						if (!ZEND_REGSET_IN(regset, ZREG_R0)) {
-							ZEND_REGSET_INCL(regset, ZREG_R0);
-						} else {
-							ZEND_REGSET_INCL(regset, ZREG_R1);
-						}
-					}
+				    /* MOD is going to be optimized into AND */
+				    goto bw_op;
 				} else {
+					regset = ZEND_REGSET_EMPTY;
 					ZEND_REGSET_INCL(regset, ZREG_R0);
 					ZEND_REGSET_INCL(regset, ZREG_R2);
 					if (opline->op2_type == IS_CONST) {
